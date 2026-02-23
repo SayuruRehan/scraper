@@ -1,0 +1,6 @@
+/.venv
+/src/__pycache__/
+/src/adapters/__pycache__/
+/src/core/__pycache__/
+/src/output/__pycache__/
+/src/pipelines/__pycache__/

@@ -1,0 +1,214 @@
+{
+  "university": [
+    {
+      "name": "University of Oxford Scholarships",
+      "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/scholarships",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "a[href*='/admissions/graduate/fees-and-funding/']",
+      "include_url_patterns": [
+        "/admissions/graduate/fees-and-funding/",
+        "/fees-funding-and-scholarship-search"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "funding",
+        "studentship",
+        "grant"
+      ],
+      "max_records": 60
+    },
+    {
+      "name": "University of Edinburgh International Funding",
+      "url": "https://registryservices.ed.ac.uk/student-funding/postgraduate/international/masters",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h2 a[href], .content a[href]",
+      "include_url_patterns": [
+        "/student-funding/postgraduate/",
+        "/scholarships-and-student-funding/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "funding",
+        "award",
+        "studentship"
+      ],
+      "max_records": 60
+    },
+    {
+      "name": "UCL Scholarships and Funding",
+      "url": "https://www.ucl.ac.uk/scholarships/",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h3 a[href*='/scholarships/'], .main-content a[href*='/scholarships/']",
+      "include_url_patterns": [
+        "/scholarships/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "funding",
+        "bursary"
+      ],
+      "max_records": 80
+    }
+  ],
+  "government": [
+    {
+      "name": "Chevening Scholarships",
+      "url": "https://www.chevening.org/scholarships/",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h3 a[href], .content a[href]",
+      "include_url_patterns": [
+        "chevening.org/scholarships"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "master",
+        "apply"
+      ],
+      "max_records": 40
+    },
+    {
+      "name": "Commonwealth Scholarship Commission",
+      "url": "https://cscuk.fcdo.gov.uk/scholarships/",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h2 a[href*='/scholarships/']",
+      "include_url_patterns": [
+        "cscuk.fcdo.gov.uk/scholarships/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "fellowship",
+        "master"
+      ],
+      "max_records": 60
+    },
+    {
+      "name": "EduCanada International Scholarships",
+      "url": "https://www.educanada.ca/scholarships-bourses/index.aspx?lang=eng",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h3 a[href*='scholarships-bourses'], h2 a[href*='scholarships-bourses']",
+      "include_url_patterns": [
+        "/scholarships-bourses/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "apply",
+        "funding"
+      ],
+      "max_records": 40
+    }
+  ],
+  "ngo": [
+    {
+      "name": "Rotary Scholarships",
+      "url": "https://www.rotary.org/en/our-programs/scholarships",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "a[href]",
+      "include_url_patterns": [
+        "rotary.org"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "fellowship",
+        "grant"
+      ],
+      "max_records": 40
+    },
+    {
+      "name": "World Bank Scholarships Program",
+      "url": "https://www.worldbank.org/en/programs/scholarships",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "a[href]",
+      "include_url_patterns": [
+        "/programs/scholarships",
+        "webportalapp.com/sp/jjwbgsp",
+        "thedocs.worldbank.org"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "fellowship",
+        "program",
+        "apply",
+        "jj/wbgsp"
+      ],
+      "max_records": 50
+    },
+    {
+      "name": "British Council Women in STEM",
+      "url": "https://www.britishcouncil.org/study-work-abroad/in-uk/scholarship-women-stem",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "a[href]",
+      "include_url_patterns": [
+        "scholarship-women-stem"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "apply",
+        "eligibility",
+        "stem"
+      ],
+      "max_records": 40
+    }
+  ],
+  "aggregator": [
+    {
+      "name": "Scholars4Dev Masters Scholarships",
+      "url": "https://www.scholars4dev.com/category/scholarships-by-degree/masters-scholarships/",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h2 a[href*='scholars4dev.com/']",
+      "include_url_patterns": [
+        "scholars4dev.com/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "master",
+        "fellowship",
+        "grant"
+      ],
+      "max_records": 100
+    },
+    {
+      "name": "ScholarshipTab International Students",
+      "url": "https://www.scholarshiptab.com/scholarships-for/international-students",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h2 a[href*='/scholarships/']",
+      "include_url_patterns": [
+        "/scholarships/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "master",
+        "graduate",
+        "postgraduate"
+      ],
+      "max_records": 120
+    },
+    {
+      "name": "Opportunities For Africans Scholarships",
+      "url": "https://www.opportunitiesforafricans.com/category/scholarships/",
+      "dynamic": false,
+      "enabled": true,
+      "item_selector": "h2 a[href*='opportunitiesforafricans.com/']",
+      "include_url_patterns": [
+        "opportunitiesforafricans.com/"
+      ],
+      "include_title_keywords": [
+        "scholarship",
+        "master",
+        "postgraduate",
+        "fellowship"
+      ],
+      "max_records": 120
+    }
+  ]
+}

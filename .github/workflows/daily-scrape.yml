@@ -1,0 +1,57 @@
+name: Daily Scholarship Scraper
+
+on:
+  schedule:
+    # Runs at 02:00 UTC daily (adjust timezone as needed)
+    - cron: '0 2 * * *'
+  
+  # Allows manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run scraper
+        run: |
+          python -m src.run_once
+        env:
+          PYTHONUNBUFFERED: 1
+      
+      - name: Get export filename
+        id: export
+        run: |
+          LATEST_EXPORT=$(ls -t data/exports/scholarships_masters_*.csv | head -1)
+          echo "file=$LATEST_EXPORT" >> $GITHUB_OUTPUT
+          echo "filename=$(basename $LATEST_EXPORT)" >> $GITHUB_OUTPUT
+      
+      - name: Upload CSV as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scholarship-export-${{ github.run_number }}
+          path: ${{ steps.export.outputs.file }}
+          retention-days: 30
+      
+      - name: Commit and push results (optional)
+        if: false  # Set to true to auto-commit results to repo
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/exports/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update: ${{ steps.export.outputs.filename }}"
+          git push

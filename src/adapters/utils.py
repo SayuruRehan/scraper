@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+import logging
+import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
+from src.adapters.deadline_parser import extract_deadline
 from src.core.fetch import FetchClient
 from src.core.schema import ScholarshipRecord
 from src.core.source_catalog import SourceTarget
+
+logger = logging.getLogger(__name__)
 
 SCHOLARSHIP_KEYWORDS = ("scholarship", "funding", "grant", "fellowship", "bursary")
 MASTERS_KEYWORDS = ("master", "masters", "master's", "msc", "ma", "postgraduate", "graduate")
@@ -73,10 +78,51 @@ def _extract_title_and_link(item: BeautifulSoup, target: SourceTarget) -> tuple[
 def collect_generic_source(fetch_client: FetchClient, target: SourceTarget) -> list[ScholarshipRecord]:
     page = fetch_client.fetch_dynamic(target.url) if target.dynamic else fetch_client.fetch_static(target.url)
     soup = fetch_client.to_soup(page)
-    return extract_records_from_soup(soup, target)
+    return extract_records_from_soup(soup, target, fetch_client)
 
 
-def extract_records_from_soup(soup: BeautifulSoup, target: SourceTarget) -> list[ScholarshipRecord]:
+def _fetch_detail_page_deadline(fetch_client: FetchClient, detail_url: str, target: SourceTarget) -> str:
+    """
+    Fetch detail page and extract deadline information.
+    
+    Args:
+        fetch_client: HTTP client for fetching pages
+        detail_url: URL of the scholarship detail page
+        target: Source configuration
+    
+    Returns:
+        ISO format deadline string or empty string if not found
+    """
+    try:
+        # Rate limiting - be polite to servers
+        if target.detail_page_delay > 0:
+            time.sleep(target.detail_page_delay)
+        
+        # Fetch detail page
+        detail_page = fetch_client.fetch_static(detail_url)
+        detail_soup = fetch_client.to_soup(detail_page)
+        
+        # Extract all text content from the page
+        page_text = detail_soup.get_text(" ", strip=True)
+        
+        # Try to extract deadline using patterns
+        deadline = extract_deadline(page_text, target.deadline_patterns)
+        
+        if deadline:
+            logger.debug(f"Found deadline {deadline} on detail page: {detail_url}")
+        
+        return deadline or ""
+        
+    except Exception as e:
+        logger.warning(f"Failed to fetch detail page {detail_url}: {e}")
+        return ""
+
+
+def extract_records_from_soup(
+    soup: BeautifulSoup, 
+    target: SourceTarget, 
+    fetch_client: FetchClient | None = None
+) -> list[ScholarshipRecord]:
     records: list[ScholarshipRecord] = []
     seen_urls: set[str] = set()
     items = soup.select(target.item_selector)
@@ -105,6 +151,14 @@ def extract_records_from_soup(soup: BeautifulSoup, target: SourceTarget) -> list
             surrounding_text = item.get_text(" ", strip=True)
 
         degree_level = _infer_degree_level(title, surrounding_text, target)
+        
+        # Extract deadline from list page text first
+        deadline_text = f"{title} {surrounding_text}"
+        deadline = extract_deadline(deadline_text, target.deadline_patterns)
+        
+        # If deadline not found on list page and detail fetching is enabled, fetch detail page
+        if not deadline and target.fetch_detail_page and fetch_client:
+            deadline = _fetch_detail_page_deadline(fetch_client, absolute_url, target)
 
         records.append(
             ScholarshipRecord(
@@ -114,6 +168,7 @@ def extract_records_from_soup(soup: BeautifulSoup, target: SourceTarget) -> list
                 provider_name=target.name,
                 target_degree_level=degree_level,
                 application_url=absolute_url,
+                application_deadline=deadline or "",
                 requirements_text=surrounding_text[:1200],
             )
         )

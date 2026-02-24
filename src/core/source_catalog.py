@@ -19,6 +19,9 @@ class SourceTarget:
     include_url_patterns: list[str] | None = None
     include_title_keywords: list[str] | None = None
     max_records: int = 100
+    deadline_patterns: list[str] | None = None
+    fetch_detail_page: bool = True
+    detail_page_delay: float = 1.0
 
 
 def load_sources(config_path: Path) -> dict[str, list[SourceTarget]]:
@@ -42,6 +45,9 @@ def load_sources(config_path: Path) -> dict[str, list[SourceTarget]]:
                     include_url_patterns=item.get("include_url_patterns"),
                     include_title_keywords=item.get("include_title_keywords"),
                     max_records=int(item.get("max_records", 100)),
+                    deadline_patterns=item.get("deadline_patterns"),
+                    fetch_detail_page=bool(item.get("fetch_detail_page", True)),
+                    detail_page_delay=float(item.get("detail_page_delay", 1.0)),
                 )
             )
         result[category] = targets

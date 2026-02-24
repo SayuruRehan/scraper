@@ -129,3 +129,31 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='www.britishcouncil.or
 2026-02-23 21:47:05,304 | INFO | Collecting from adapter: aggregator
 2026-02-23 21:47:15,620 | INFO | Adapter aggregator accepted 42/65 records
 2026-02-23 21:47:15,623 | INFO | Run complete. exported=59 deduped=C:\Users\SayuruRehanBopitiyaP\OneDrive - Platned Syngco Limited\Desktop\SR\Projects\scraper\scraper\data\exports\scholarships_masters_20260223_161715.csv
+2026-02-24 10:01:08,570 | INFO | Starting scraper run with 4 adapters
+2026-02-24 10:01:08,570 | INFO | Collecting from adapter: university
+2026-02-24 10:01:18,417 | INFO | Adapter university accepted 10/10 records
+2026-02-24 10:01:18,418 | INFO | Collecting from adapter: government
+2026-02-24 10:01:30,603 | INFO | Adapter government accepted 5/16 records
+2026-02-24 10:01:30,604 | INFO | Collecting from adapter: ngo
+2026-02-24 10:01:57,522 | INFO | Adapter ngo accepted 2/8 records
+2026-02-24 10:01:57,522 | INFO | Collecting from adapter: aggregator
+2026-02-24 10:02:07,560 | INFO | Adapter aggregator accepted 42/65 records
+2026-02-24 10:02:07,564 | INFO | Run complete. exported=59 deduped=C:\Users\SayuruRehanBopitiyaP\OneDrive - Platned Syngco Limited\Desktop\SR\Projects\scraper\scraper\data\exports\scholarships_masters_20260224_043207.csv
+2026-02-24 10:10:42,519 | INFO | Starting scraper run with 4 adapters
+2026-02-24 10:10:42,519 | INFO | Collecting from adapter: university
+2026-02-24 10:10:49,824 | INFO | Adapter university accepted 10/10 records
+2026-02-24 10:10:49,825 | INFO | Collecting from adapter: government
+2026-02-24 10:11:00,792 | INFO | Adapter government accepted 5/16 records
+2026-02-24 10:11:00,792 | INFO | Collecting from adapter: ngo
+2026-02-24 10:11:29,277 | INFO | Adapter ngo accepted 2/8 records
+2026-02-24 10:11:29,277 | INFO | Collecting from adapter: aggregator
+2026-02-24 10:17:32,608 | INFO | Starting scraper run with 4 adapters
+2026-02-24 10:17:32,609 | INFO | Collecting from adapter: university
+2026-02-24 10:17:32,609 | INFO | Adapter university accepted 0/0 records
+2026-02-24 10:17:32,610 | INFO | Collecting from adapter: government
+2026-02-24 10:17:32,610 | INFO | Adapter government accepted 0/0 records
+2026-02-24 10:17:32,611 | INFO | Collecting from adapter: ngo
+2026-02-24 10:17:32,611 | INFO | Adapter ngo accepted 0/0 records
+2026-02-24 10:17:32,612 | INFO | Collecting from adapter: aggregator
+2026-02-24 10:18:00,642 | INFO | Adapter aggregator accepted 5/5 records
+2026-02-24 10:18:00,644 | INFO | Run complete. exported=5 deduped=C:\Users\SayuruRehanBopitiyaP\OneDrive - Platned Syngco Limited\Desktop\SR\Projects\scraper\scraper\data\exports\scholarships_masters_20260224_044800.csv

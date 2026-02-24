@@ -16,7 +16,12 @@
         "studentship",
         "grant"
       ],
-      "max_records": 60
+      "max_records": 60,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "University of Edinburgh International Funding",
@@ -34,7 +39,12 @@
         "award",
         "studentship"
       ],
-      "max_records": 60
+      "max_records": 60,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "UCL Scholarships and Funding",
@@ -50,7 +60,12 @@
         "funding",
         "bursary"
       ],
-      "max_records": 80
+      "max_records": 80,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     }
   ],
   "government": [
@@ -68,7 +83,12 @@
         "master",
         "apply"
       ],
-      "max_records": 40
+      "max_records": 40,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "Commonwealth Scholarship Commission",
@@ -84,7 +104,12 @@
         "fellowship",
         "master"
       ],
-      "max_records": 60
+      "max_records": 60,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "EduCanada International Scholarships",
@@ -100,7 +125,12 @@
         "apply",
         "funding"
       ],
-      "max_records": 40
+      "max_records": 40,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     }
   ],
   "ngo": [
@@ -118,7 +148,12 @@
         "fellowship",
         "grant"
       ],
-      "max_records": 40
+      "max_records": 40,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "World Bank Scholarships Program",
@@ -138,7 +173,12 @@
         "apply",
         "jj/wbgsp"
       ],
-      "max_records": 50
+      "max_records": 50,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     },
     {
       "name": "British Council Women in STEM",
@@ -155,7 +195,12 @@
         "eligibility",
         "stem"
       ],
-      "max_records": 40
+      "max_records": 40,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": false
     }
   ],
   "aggregator": [
@@ -174,7 +219,13 @@
         "fellowship",
         "grant"
       ],
-      "max_records": 100
+      "max_records": 100,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": true,
+      "detail_page_delay": 2.0
     },
     {
       "name": "ScholarshipTab International Students",
@@ -191,7 +242,13 @@
         "graduate",
         "postgraduate"
       ],
-      "max_records": 120
+      "max_records": 120,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": true,
+      "detail_page_delay": 2.0
     },
     {
       "name": "Opportunities For Africans Scholarships",
@@ -208,7 +265,13 @@
         "postgraduate",
         "fellowship"
       ],
-      "max_records": 120
+      "max_records": 120,
+      "deadline_patterns": [
+        "deadline[:\\s]+(\\d{1,2}\\s+(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:tember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\\s+\\d{4})",
+        "closes?[:\\s]+(\\d{1,2}[/-]\\d{1,2}[/-]\\d{4})"
+      ],
+      "fetch_detail_page": true,
+      "detail_page_delay": 2.0
     }
   ]
 }
